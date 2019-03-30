@@ -1,5 +1,5 @@
 const Response = require('./class/Response')
-const ObjectId = require('bson').ObjectId;
+// const ObjectId = require('bson').ObjectId;
 
 class Util {
 	constructor() {
@@ -10,15 +10,6 @@ class Util {
         // console.log('Util Init')
     }
 
-    /* 
-        Get classname from ES6 module or require
-        Whilte importing async/await like const demo = import("../demo") -> ES6 it returns classname in c.default
-        but when we require demo = rqeuire("../demo") then it return direct classname
-    */
-    // getClass = (c) => {
-    //     const ClassNew = c.__esModule ? c.default : c
-    //     return ClassNew
-    // }
 
     isset(obj) {
         var dump;
@@ -34,24 +25,17 @@ class Util {
             if(obj.hasOwnProperty(prop))
                 return false;
         }
-    
         return JSON.stringify(obj) === JSON.stringify({});
     }
 
     objValue(obj, props=[], defaultValue = null) {
         if(undefined==obj || this.isEmpty(obj)) return defaultValue
-        
         props.forEach(element => {
-            // console.log(element, obj)
             if(undefined==obj || this.isEmpty(obj) || !obj.hasOwnProperty(element)) {
                 obj = defaultValue
                 return
             }
-            // console.log(obj, element, obj.hasOwnProperty(element))
             obj = obj[element];
-
-            // console.log(defaultValue)
-            
         });
         
         return obj
@@ -87,14 +71,16 @@ class Util {
     }
     
     isObjectId(val) {
-        // console.log("AMAM", val)
-        if (ObjectId.isValid(val)) {
+        if (val.match(/^[0-9a-fA-F]{24}$/)) {
             return true
         }
+
+        // console.log("AMAM", val)
+        // if (ObjectId.isValid(val)) {
+        //     return true
+        // }
 
         return false
     }
 }
-
-// module.exports = new Util()
 module.exports = () => new Util()

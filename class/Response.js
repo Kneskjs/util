@@ -12,7 +12,7 @@ class CustomError extends Error {
     this.message = message;
     // this.date = new Date();
   }
-}
+};
 
 module.exports = class Response {
     constructor() {

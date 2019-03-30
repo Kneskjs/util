@@ -1,17 +1,17 @@
-# Knesk Util &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jeoga/option/blob/master/LICENSE)
+# Knesk Util &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/knesklab/util/blob/master/LICENSE)
 
 
-#### A Util plugin with general functions in Javascript
-- Flexibilty: Can be used as Javascript Plugin or Node.js Module with any kind of Node.js Framework
+#### A Util Jaavscript Plugin with general functions.
+Can be used as Javascript Plugin or Node.js Framwork with any kind of Node.js Framework
 
 #### Examples
-Check examples/ directory and simply run any example using **node example1.js**
+Check examples/ directory and simply run any example using **node example.js**
 
 ### How to Install
   ```javascript
 npm install @knesk/util
 or
-yarn add @knesk/opttion
+yarn add @knesk/util
 ```
 
 #### How to USE
