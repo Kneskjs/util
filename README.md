@@ -5,13 +5,13 @@
 - Flexibilty: Can be used as Javascript Plugin or Node.js Module with any kind of Node.js Framework
 
 #### Examples
-Check examples/ directory and simply run any example using **node example1.js**
+Check examples/ directory and simply run any example using **node example.js**
 
 ### How to Install
   ```javascript
 npm install @knesk/util
 or
-yarn add @knesk/opttion
+yarn add @knesk/util
 ```
 
 #### How to USE
