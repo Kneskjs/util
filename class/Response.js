@@ -31,16 +31,37 @@ module.exports = class Response {
         return new CustomError(code, message, error);
     }
 
-    print(success, data, message=null, code=null, append={}) {
-        code = code ? code : success ? 200 : 400;
-        var response = {
-            success: success,
-            code: code,
-            message: message,
-            error: success ? null : data,
-            data: success ? data : null,
+    print(message=null, data, code=null, append={}) {
+        code = code ? code : 200;
+
+        var response = {}
+        if(message) {
+            response['message'] = message
+        }
+        response['data'] = data
+            
+        response = Object.assign({}, response, append)
+        return response
+    }
+
+    printError(message=null, data, code=null, append={}) {
+        code = code ? code : 400;
+        var response = {}
+        let responseError = {}
+        if(message) {
+            responseError['message'] = message
         }
 
+        if(code) {
+            responseError['code'] = code
+        }
+        
+        responseError['errors'] = data || [{
+            code: code, 
+            message: message
+        }]
+
+        response['error'] = responseError
         response = Object.assign({}, response, append)
         return response
     }

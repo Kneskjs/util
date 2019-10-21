@@ -1,9 +1,9 @@
-const Response = require('./class/Response')
+// const Response = require('./class/Response')
 // const ObjectId = require('bson').ObjectId;
 
 class Util {
 	constructor() {
-        this.Response = new Response()
+        // this.Response = new Response()
     }
     
     async init() {
@@ -83,4 +83,4 @@ class Util {
         return false
     }
 }
-module.exports = () => new Util()
+module.exports = Util
