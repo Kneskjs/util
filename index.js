@@ -1,21 +1,22 @@
-// const Response = require('./class/Response')
-// const ObjectId = require('bson').ObjectId;
-
 class Util {
 	constructor() {
-        // this.Response = new Response()
+
     }
     
     async init() {
         // console.log('Util Init')
     }
 
-
     isset(obj) {
         var dump;
         if(undefined==obj) return false
         
         return true;
+    }
+
+    isStringEmpty(value) {
+        if(undefined==value || value=='' || value==null) return true
+        return false
     }
 
     isEmpty(obj) {
@@ -74,13 +75,8 @@ class Util {
         if (val.match(/^[0-9a-fA-F]{24}$/)) {
             return true
         }
-
-        // console.log("AMAM", val)
-        // if (ObjectId.isValid(val)) {
-        //     return true
-        // }
-
         return false
     }
 }
+
 module.exports = Util

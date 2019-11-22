@@ -1,4 +1,8 @@
 #### Changelog
+0.0.4
+- Add new function isStringEmpty
+- Response class depreciated
+
 0.0.3
 - Rollup Config and Gulpfile included so library can be compiled from both
 - isObjectID changed to regex from bson library to reduce the util library size
